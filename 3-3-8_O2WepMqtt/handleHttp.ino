@@ -8,13 +8,9 @@ void handleRoot() {
   s=s+"<meta http-equiv='refresh' content='5'/>";
   s=s+"<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />";
   s=s+"<h1>O2 "+fO2+"</h1><br>";
-  
-  if(setAP==1) {
-    s=s+"아래 공유기 이름과 주소가 연결되었으면 주소를 선택한 후에 설정에서 사용 하시는 인터넷 공유기를 선택하세요. <br>";
-    s=s+"Connected IP : "+String(ssid)+"  "+"<p><a href='http://"+WiFi.localIP().toString()+"'/>"+WiFi.localIP().toString()+"</a></p>";
-  }
+  s=s+"아래 공유기 이름과 주소가 연결되었으면 주소를 선택한 후에 설정에서 사용 하시는 인터넷 공유기를 선택하세요. <br>";
+  s=s+"Connected IP : "+String(ssid)+"  "+"<p><a href='http://"+WiFi.localIP().toString()+"'/>"+WiFi.localIP().toString()+"</a></p>";
   s=s+"<p><a href='/wifi'>공유기를 바꾸려면 누르세요.</a></p>";
-  setAP=0;
   server.send(200, "text/html", s); // Empty content inhibits Content-length header so we have to close the socket ourselves.
 }
 
@@ -58,7 +54,6 @@ void handleWifi() {
     +"<br /><input type='submit' value='      저    장      '/></form>"
     +"<p><a href='/'>메인 홈페이지로 가기</a>.</p>";
   server.send(200, "text/html", s);
-  setAP=1;
 }
 
 /** Handle the WLAN save form and redirect to WLAN config page again */

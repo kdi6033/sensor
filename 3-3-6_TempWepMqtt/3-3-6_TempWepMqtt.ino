@@ -22,7 +22,6 @@ const char *softAP_ssid = "i2r_ap_";
 const char *softAP_password = "00000000";
 String sAP_ssid;
 char cAP_ssid[20];
-int setAP=1;// 1 이면 ap 설정중 으로 메인 페이지에 주소 표시
  
 /* hostname for mDNS. Should work at least on windows. Try http://i2r.local */
 const char *myHostname = "i2r";
