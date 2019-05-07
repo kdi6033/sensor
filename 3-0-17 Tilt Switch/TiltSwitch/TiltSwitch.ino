@@ -6,7 +6,6 @@ void setup()
   pinMode(d2, INPUT);
   pinMode(d4, OUTPUT);
 }
-
 void loop()
 {
   Serial.println(digitalRead(d2));
