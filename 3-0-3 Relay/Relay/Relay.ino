@@ -1,17 +1,16 @@
-int S = A0; // INPUT PIN
 int d2=D2;
 void setup()
 {
  Serial.begin(115200); // 시리얼 통신 초기화
- pinMode(S, INPUT);
- pinMode(d2, INPUT);
+ pinMode(d2, OUTPUT);
 }
 
 void loop()
 {
- Serial.println(analogRead(S));
- Serial.println(digitalRead(d2));
- delay(100);
+  digitalWrite(d2,HIGH);
+  delay(1000);
+  digitalWrite(d2,LOW);
+  delay(1000);
 }
 
 
