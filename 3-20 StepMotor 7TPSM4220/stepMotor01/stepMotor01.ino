@@ -23,7 +23,7 @@ void loop() {
       digitalWrite(STP, 1);
       delayMicroseconds(700);
       digitalWrite(STP, 0);
-      delayMicroseconds(700);
+      delayMicroseconds(300);
   }
   delay(2000);
   
