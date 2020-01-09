@@ -1,8 +1,6 @@
 
 #include <ESP8266WiFi.h>
 
-const char* ssid = "i2r";
-const char* password = "00000000";
 const int led1Pin =  4;
 boolean bLED1 = false; 
 const int led2Pin =  0;

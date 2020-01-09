@@ -82,7 +82,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   deserializeJson(doc,payload);
   root = doc.as<JsonObject>();
-  //const char* red = root["r"];
   int rot=root["rot"];
   rotate(rot);
 }
