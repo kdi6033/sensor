@@ -5,8 +5,8 @@
 #include "PMS.h"
 
 // 아래의 6개설정은 사용자 환경에 맞게 수정하세요.
-const char* ssid = "i2r"; // 와이파이 AP, 또는 스마트폰의 핫스판 이름
-const char* password = "00000000";  // 와이파이 AP, 또는 스마트폰의 핫스판 이름
+const char* ssid = "405902-2.4G"; // 와이파이 AP, 또는 스마트폰의 핫스판 이름
+const char* password = "k01033887147";  // 와이파이 AP, 또는 스마트폰의 핫스판 이름
 const char* mqtt_server = "broker.mqtt-dashboard.com"; //브로커 주소
 const char* outTopic = "/kdi/outTopic"; // 이름이 중복되지 않게 설정 기록
 const char* inTopic = "/kdi/inTopic"; // 이름이 중복되지 않게 설정 기록
@@ -28,7 +28,7 @@ JsonObject root;
 PMS pms(Serial);
 PMS::DATA data;
 const int ledPin =  D7;
-int dustValue;
+int dustValue=0,setValue=40;
 String inputString;
 
 // RGB Linght를 위한 설정
@@ -81,7 +81,11 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   deserializeJson(doc,payload);
   root = doc.as<JsonObject>();
-  //red = root["r"];
+  const char* sChipidin = root["chip"];
+  if( sChipID.equals(sChipidin)) {
+    setValue = root["set"];
+    Serial.println(setValue);
+  }
 }
 
 // mqtt 통신에 지속적으로 접속한다.
@@ -111,7 +115,7 @@ void DoResult() {
   inputString.toCharArray(msg, inputString.length());
   Serial.println(msg);
   client.publish(outTopic, msg);
-  if(dustValue>40)
+  if(dustValue>setValue)
     digitalWrite(ledPin, 1);
   else
     digitalWrite(ledPin, 0);
@@ -120,9 +124,9 @@ void DoResult() {
 void loop() {
   if (pms.read(data)) {
     dustValue=data.PM_AE_UG_2_5;
-    Serial.print("PM 2.5 (ug/m3): ");
-    Serial.println(dustValue);
-    Serial.println();
+    //Serial.print("PM 2.5 (ug/m3): ");
+    //Serial.println(dustValue);
+    //Serial.println();
     DoResult();
   }
    
