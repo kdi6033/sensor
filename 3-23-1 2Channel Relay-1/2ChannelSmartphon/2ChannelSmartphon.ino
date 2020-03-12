@@ -20,14 +20,12 @@ char cAP_ssid[20];
 char cChipID[10]; // Json에서 chipid를 고유 ID로 사용
 
 boolean connect;
-const int led = 2;
+unsigned long lastConnectTry = 0;
 int bootMode=0; //0:station  1:AP
 int relay[2];
 
 void setup(void) {
   Serial.begin(115200);
-  pinMode(led, OUTPUT);
-  digitalWrite(led, 1);
   pinMode(TRIGGER_PIN, INPUT_PULLUP);
   
   // AP 이름 자동으로 만듬
@@ -47,8 +45,6 @@ void setup(void) {
   server.on("/", handleRoot);
   server.on("/relay0", handleRelay0);
   server.on("/relay1", handleRelay1);
-  server.on("/on", handleOn);
-  server.on("/off", handleOff);
   server.on("/wifi", handleWifi);
   server.on("/wifisave", handleWifiSave);
   server.on("/scan", handleScan);
@@ -68,7 +64,6 @@ void setupAp() {
   delay(500); // Without delay I've seen the IP address blank
   Serial.print("AP IP address: ");
   Serial.println(WiFi.softAPIP());
-  digitalWrite(led, 0); //상태 led로 표시
 }
 
 void connectWifi() {
@@ -76,26 +71,45 @@ void connectWifi() {
   Serial.println("STATION Mode");
   WiFi.disconnect();
   WiFi.mode(WIFI_STA); 
-  IPAddress ip(172, 30, 1, 201); 
-  IPAddress gateway(172, 30, 1, 254);
-  //IPAddress ip(192, 168, 0, 201); 
-  //IPAddress gateway(192, 168, 0, 1);
+  //IPAddress ip(172, 30, 1, 201); 
+  //IPAddress gateway(172, 30, 1, 254);
+  IPAddress ip(192, 168, 0, 201); 
+  IPAddress gateway(192, 168, 0, 1);
   IPAddress subnet(255, 255, 255, 0);
   WiFi.config(ip, gateway, subnet); // before or after Wifi.Begin(ssid, password);
   WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+  
+  //referance: https://www.arduino.cc/en/Reference/WiFiStatus
+  //WL_NO_SHIELD:255 WL_IDLE_STATUS:0 WL_NO_SSID_AVAIL:1 WL_SCAN_COMPLETED:2
+  //WL_CONNECTED:3 WL_CONNECT_FAILED:4 WL_CONNECTION_LOST:5 WL_DISCONNECTED:6
+  int connRes = WiFi.waitForConnectResult();
+  Serial.print ( "connRes: " );
+  Serial.println ( connRes );
+  if(connRes == WL_CONNECTED){
+    Serial.println("well connected");
+    Serial.println(WiFi.localIP());
   }
+  else
+    WiFi.disconnect();
+    
   // 상태 led로 표시
   for(int i=0;i<10;i++) {
-    Serial.println("AP MOd AP MOd AP MOd AP MOd AP MOd AP MOd");
+    Serial.println("STATIO MOd STATIO MOd STATIO MOd STATIO MOd STATIO MOd ");
     delay(500);
   }
 }
 
 void loop(void) {
   server.handleClient();
+
+  long now = millis();
+  //6초에 한번 와이파이 끊기면 다시 연결
+  unsigned int sWifi = WiFi.status();
+  if (sWifi == WL_IDLE_STATUS && now > (lastConnectTry + 60000) && strlen(ssid) > 0 ) {
+    lastConnectTry=now;
+    Serial.println ( "Connect requested" );
+    connectWifi();
+  }
 
   if(bootMode==1) {
     Serial.println("AP MOd AP MOd AP MOd AP MOd AP MOd AP MOd");

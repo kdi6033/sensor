@@ -43,8 +43,6 @@ void connectWifi() {
   Serial.println("STATION Mode");
   WiFi.disconnect();
   WiFi.mode(WIFI_STA); 
-  //IPAddress ip(172, 30, 1, 201); 
-  //IPAddress gateway(172, 30, 1, 254);
   IPAddress ip(192, 168, 0, 201); 
   IPAddress gateway(192, 168, 0, 1);
   IPAddress subnet(255, 255, 255, 0);

@@ -6,10 +6,6 @@ void handleRoot() {
   //s=s+"<meta http-equiv='refresh' content='5'/>";
   s=s+"<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />";
   s=s+"<h1>김동일 웹서버 i2r.link</h1>";
-  //s=s+"<a href=\"on\"><button style='background-color:Lime; color:blue;'>켜짐 on</button></a>";
-  //s=s+"&nbsp&nbsp";
-  //s=s+"<a href=\"off\"><button style='background-color:Gray; color:blue;'>꺼짐 off</button></a>";
-  //s=s+"<br><br>";
   
   if(relay[0]==1)
     s=s+"<a href=\"relay0\"><button style='background-color:Lime; color:blue;'>릴레이0 on</button></a>";
@@ -52,16 +48,6 @@ void handleRelay1() {
   GoHome();
 }
 
-
-void handleOn() {
-  digitalWrite(led, 0);
-  GoHome();
-}
-
-void handleOff() {
-  digitalWrite(led, 1);
-  GoHome();
-}
 
 void GoHome() {
   String s,ipS;
