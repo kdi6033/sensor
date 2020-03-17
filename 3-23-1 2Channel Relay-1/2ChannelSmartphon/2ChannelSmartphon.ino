@@ -94,7 +94,7 @@ void connectWifi() {
     
   // 상태 led로 표시
   for(int i=0;i<10;i++) {
-    Serial.println("STATIO MOd STATIO MOd STATIO MOd STATIO MOd STATIO MOd ");
+    Serial.println("STATION MOd STATION MOd STATION MOd STATION MOd STATION MOd ");
     delay(500);
   }
 }

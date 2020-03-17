@@ -165,39 +165,3 @@ void relayDo() {
       Serial.write(0xA2);   
   }
 }
-
-/*
-void relay0() {
-  if(relay[0]==1) {
-      //turn relay 1 on
-      Serial.write(0xA0);
-      Serial.write(0x01);
-      Serial.write(0x01);
-      Serial.write(0xA2);
-  }
-  else {
-      //turn relay 1 off
-      Serial.write(0xA0);
-      Serial.write(0x01);
-      Serial.write(0x00);
-      Serial.write(0xA1);   
-  }
-}
-
-void relay1() {
-  if(relay[1]==1) {
-      //turn relay 2 on
-      Serial.write(0xA0);
-      Serial.write(0x02);
-      Serial.write(0x01);
-      Serial.write(0xA3);
-  }
-  else {
-      //turn relay 2 off
-      Serial.write(0xA0);
-      Serial.write(0x02);
-      Serial.write(0x00);
-      Serial.write(0xA2);   
-  }
-}
-*/
