@@ -10,6 +10,6 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(hx711.read()/100.0);
+  Serial.println(hx711.read());
   delay(500);
 }
