@@ -49,7 +49,7 @@ Distributed as-is; no warranty is given.
 #include <SparkFun_APDS9960.h>
 
 // Pins
-#define APDS9960_INT    D8 // Needs to be an interrupt pin
+#define APDS9960_INT    D4 // Needs to be an interrupt pin
 void ICACHE_RAM_ATTR interruptRoutine();
 // Constants
 
