@@ -24,7 +24,7 @@ int STP = D1; // pulse
 int EN = D2;  // step 진행 on off
 
 unsigned long count=0,countPulse=0,lastCount=0;
-int delayMsec=0; // 100이상해야함
+int delayMsec=200; // 100이상해야함
 int onSw=0;
 bool toggle_led(void *) {
   rotate();
