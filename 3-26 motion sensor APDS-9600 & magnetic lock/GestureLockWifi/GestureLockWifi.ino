@@ -39,7 +39,7 @@ void setup() {
   timer.every(5000, toggle_led);
   
   // put your setup code here, to run once:
-  Serial.begin(19200);
+  Serial.begin(115200);
 
   pinMode(APDS9960_INT, INPUT);
   pinMode(relay, OUTPUT);
@@ -49,6 +49,9 @@ void setup() {
   Wire.begin();  
   oled.init();                      // Initialze SSD1306 OLED display
   oled.clearDisplay();              // Clear screen
+
+  oled.setTextXY(2,4);     
+  oled.putString("Set Wifi");
   
   // put your setup code here, to run once:
 
