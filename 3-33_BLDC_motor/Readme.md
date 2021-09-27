@@ -4,10 +4,10 @@ BLDC 모터
 
 ## 1.1 사용제품
 ![image](https://user-images.githubusercontent.com/37902752/134830443-6e32b122-aa9e-4bbb-8690-4a585405e173.png)
-E-TECH에서 제작한 BLDC 모터 24V 250W x 2 
+   E-TECH에서 제작한 BLDC 모터 24V 250W x 2 
 
 ![image](https://user-images.githubusercontent.com/37902752/134830450-aa7533a0-4c3b-47c7-a61e-e39f475ee09d.png)
- Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
+   Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
 
 
 ## 1.2 수동제어
