@@ -3,11 +3,11 @@ BLDC 모터
 ![001](https://user-images.githubusercontent.com/37902752/134831269-0cdb8d24-544b-4778-9f2d-be28e6a3677a.png)
 
 ## 1.1 사용제품
-![image](https://user-images.githubusercontent.com/37902752/134830443-6e32b122-aa9e-4bbb-8690-4a585405e173.png)
-   E-TECH에서 제작한 BLDC 모터 24V 250W x 2 
+![image](https://user-images.githubusercontent.com/37902752/134830443-6e32b122-aa9e-4bbb-8690-4a585405e173.png)   
+E-TECH에서 제작한 BLDC 모터 24V 250W x 2
 
-![image](https://user-images.githubusercontent.com/37902752/134830450-aa7533a0-4c3b-47c7-a61e-e39f475ee09d.png)
-   Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
+![image](https://user-images.githubusercontent.com/37902752/134830450-aa7533a0-4c3b-47c7-a61e-e39f475ee09d.png)   
+Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
 
 
 ## 1.2 수동제어
@@ -20,10 +20,10 @@ BLDC 모터
 ## 1.3 RS232제어
 ![022](https://user-images.githubusercontent.com/37902752/134831429-5cf94fee-6669-4d21-b9a0-56896782ddda.png)
 
-![image](https://user-images.githubusercontent.com/37902752/134831669-dbf2d038-4408-4900-9e6b-1e306d234b91.png)
+![image](https://user-images.githubusercontent.com/37902752/134831669-dbf2d038-4408-4900-9e6b-1e306d234b91.png)   
    컨피그로 들어가 줍니다.
-![image](https://user-images.githubusercontent.com/37902752/134831740-9161e3c6-b03d-4857-8182-33004521f67d.png)
-   디지털 인풋에 3번과 10번을 low로 바꿔줍니다.
+![image](https://user-images.githubusercontent.com/37902752/134831740-9161e3c6-b03d-4857-8182-33004521f67d.png)   
+디지털 인풋에 3번과 10번을 low로 바꿔줍니다.
 ### KEYA 프로그램 설명
 ![223](https://user-images.githubusercontent.com/37902752/134830921-093b6612-a310-40c0-89e5-438df8b847d9.PNG)
 ### RS232 제어 배선도
