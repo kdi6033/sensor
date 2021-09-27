@@ -14,6 +14,7 @@ Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
 ![001](https://user-images.githubusercontent.com/37902752/134831373-808332f4-8413-4f2d-9356-c23a89431118.png)
 
 ### 수동제어 배선도
+![가변](https://user-images.githubusercontent.com/37902752/134855109-327ba832-2329-4286-add3-77001adf33af.png)
 ![컨트롤러](https://user-images.githubusercontent.com/37902752/134830890-33462f8b-1d66-4cc3-905d-0c5f54bec8fa.jpg)
 ![모터](https://user-images.githubusercontent.com/37902752/134830875-d01f7ba6-35f5-47fc-9566-f7f06398532b.jpg)
 ![보드](https://user-images.githubusercontent.com/37902752/134830857-3f9549b1-d85f-4637-9ee5-43fde834a21c.jpg)
