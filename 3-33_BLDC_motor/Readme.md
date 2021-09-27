@@ -21,7 +21,7 @@ Keya Electron에서 제작한 bldc 모터 컨트롤러 KYDBL4830-2E
 ![022](https://user-images.githubusercontent.com/37902752/134831429-5cf94fee-6669-4d21-b9a0-56896782ddda.png)
 
 ![image](https://user-images.githubusercontent.com/37902752/134831669-dbf2d038-4408-4900-9e6b-1e306d234b91.png)   
-   컨피그로 들어가 줍니다.
+컨피그로 들어가 줍니다.   
 ![image](https://user-images.githubusercontent.com/37902752/134831740-9161e3c6-b03d-4857-8182-33004521f67d.png)   
 디지털 인풋에 3번과 10번을 low로 바꿔줍니다.
 ### KEYA 프로그램 설명
