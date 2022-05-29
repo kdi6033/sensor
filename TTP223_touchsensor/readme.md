@@ -2,7 +2,7 @@
 
 ![011](https://user-images.githubusercontent.com/37902752/170852182-79b2126d-6ae2-472a-9a69-229d0277abbe.jpg)
 
-###회로도
+### 회로도
 
 ![유튜브-용-016](https://user-images.githubusercontent.com/37902752/170852205-c0a3febc-3bd9-47f3-879c-8772a714d455.png)
 
